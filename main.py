@@ -1,9 +1,13 @@
 import os
 import importlib
+import random
 import discord
 import discord.opus
 discord.opus._load_default()
 from discord.ext import commands
+
+import autocommands.salut as salut
+salut.init()
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -14,11 +18,14 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 COMMANDS = {
     "test": "commands.test",
     "crève" : "commands.shutdown",
+    "kys" : "commands.shutdown",
     "stat" : "commands.stat"
 }
+SALUTATIONS = ["salut", "bonjour", "coucou", "bonsoir", "enchanté", "hi", "hey", "hello", "hewo", "re "]
+REPONSES = ["salut", "bonjour", "coucou", "bonsoir", "hello", "re"]
 
-from services.database import Database
-from services.message_counter import MessageCounter
+from autocommands.database import Database
+from autocommands.message_counter import MessageCounter
 from listeners.message_listener import register_message_listener
 
 db = Database("data/botdata.db")
@@ -43,8 +50,12 @@ async def on_ready():
 
 @bot.event
 async def on_message(message):
+    print(message.content)
     if message.author.bot:
         return
+    
+    if any(rep in message.content.lower() for rep in SALUTATIONS):
+        await message.channel.send(f"{salut.sentence(random.choice(REPONSES))}")
     
     if not message.content.startswith("!"):
         return
@@ -65,4 +76,4 @@ async def on_message(message):
 
     await module.run(bot, message, args)
 
-bot.run("")
+bot.run("jaaj")
