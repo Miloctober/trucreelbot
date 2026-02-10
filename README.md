@@ -8,8 +8,10 @@
 ## 1. Installation
 Pour faire tourner ce bot sur votre machine, vous devez d'abord avoir un compte de bot enregistré chez discord.
 **Etapes d'installation** :
-    - Cloner ce repo sur votre machine
-    - Créer un fichier token.txt et y coller uniquement la clé d'api fournie par discord
+    - Cloner ce repo sur votre machine 
+    
+    - Créer un fichier token.txt et y coller uniquement la clé d'api fournie par discord 
+    
     - dans /data/csv/, créer : 
         - connu.csv (noms de personnes connues, personnalisables, séparés par des retours à la ligne)  
         - ids.csv (les ids publics discord de vos amis, séparés par des retours à la ligne) 
@@ -35,3 +37,4 @@ Il existe également plusieurs "autocommandes" qui sont au nombre de 2 pour l'in
 
 
 ## 3. Contribution
+
