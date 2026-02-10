@@ -14,6 +14,10 @@ hellos = ["Hello, he was insulting me.",
         "Hello. I know the world is very angry at me right now for my behavior. But I just wanted to say, from the bottom of my heart, that I'm sorry."]
 
 def init():
+    inconnu.clear()
+    connu.clear()
+    places.clear()
+    people.clear()
     with open('./data/csv/inconnu.csv', mode ='r', encoding='utf-8')as file:
         file = csv.reader(file)
         for line in file:
