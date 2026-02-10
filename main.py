@@ -21,7 +21,8 @@ COMMANDS = {
     "crève" : "commands.shutdown",
     "kys" : "commands.shutdown",
     "sleep" : "commands.shutdown",
-    "stat" : "commands.stat"
+    "stat" : "commands.stat",
+    "editcsv" : "commands.editcsv",
 }
 SALUTATIONS = ["salut", "bonjour", "coucou", "bonsoir", "enchanté", "hi", "hey", "hewo", "bonjoir", "bonjoouj"]
 REPONSES = ["salut", "bonjour", "coucou", "bonsoir", "re", "hey", "enchanté", "bonjoir", "bonjoouj"]
