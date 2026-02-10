@@ -10,14 +10,14 @@ Pour faire tourner ce bot sur votre machine, vous devez d'abord avoir un compte 
 **Etapes d'installation** :
     - Cloner ce repo sur votre machine
     - Créer un fichier token.txt et y coller uniquement la clé d'api fournie par discord
-    - dans /data/csv/, créer :
-        - connu.csv (noms de personnes connues, personnalisables, séparés par des retours à la ligne) 
-        - ids.csv (les ids publics discord de vos amis, séparés par des retours à la ligne)
-        - inconnu.csv (des noms ou des objets, peu importe, séparés par des retours à la ligne)
-        - places.csv (des lieux, concepts... etc séparés par des retours à la ligne)
-    - **Linux** : Lancer setup.sh pour démarrer l'installation et lancer le bot pour la première fois 
-    - **Windows** : Lancer setup.ps1 dans un terminal powershell pour démarrer l'installation et lancer le bot pour la première fois 
-    - A partir de maintenant, pour démarrer le bot, lancer main.py avec python dans un terminal.    
+    - dans /data/csv/, créer : 
+        - connu.csv (noms de personnes connues, personnalisables, séparés par des retours à la ligne)  
+        - ids.csv (les ids publics discord de vos amis, séparés par des retours à la ligne) 
+        - inconnu.csv (des noms ou des objets, peu importe, séparés par des retours à la ligne) 
+        - places.csv (des lieux, concepts... etc séparés par des retours à la ligne) 
+    - **Linux** : Lancer setup.sh pour démarrer l'installation et lancer le bot pour la première fois  
+    - **Windows** : Lancer setup.ps1 dans un terminal powershell pour démarrer l'installation et lancer le bot pour la première fois  
+    - A partir de maintenant, pour démarrer le bot, lancer main.py avec python dans un terminal.     
 
 ## 2. Commandes 
 Voici la liste des commandes utilisables avec ce bot. Le préfixe par défaut est "!" mais il est modifiable, tout comme les
@@ -32,5 +32,6 @@ Il existe également plusieurs "autocommandes" qui sont au nombre de 2 pour l'in
         sentence(*array*) : retourne une phrase type "Salut c'est [mot de connu/inconnu/ids.csv] de [mot de places.csv]
         init() : initialise la méthode avec les csv fournis
         hello() : retourne une phrase de Mr. Frog
+
 
 ## 3. Contribution
