@@ -22,8 +22,8 @@ COMMANDS = {
     "kys" : "commands.shutdown",
     "sleep" : "commands.shutdown",
     "stat" : "commands.stat",
-    "editcsv" : "commands.editcsv",
-    "reloadcsv" : "commands.reloadcsv"
+    "edit" : "commands.edit",
+    "reload" : "commands.reload"
 }
 
 SALUTATIONS = ["salut", "bonjour", "coucou", "bonsoir", "enchanté", "hi", "hey", "hewo", "bonjoir", "bonjoouj"]
@@ -33,7 +33,7 @@ MOTSREACTIONS = {"npac": "npac",
                  "prout": "prout"}
 
 from autocommands.message_timer import Timer
-GPERDU = Timer(5, "J'ai perdu")
+TIMERS = [Timer(50, "J'ai perdu")]
 
 from autocommands.database import Database
 from autocommands.message_counter import MessageCounter
@@ -72,7 +72,8 @@ async def on_message(message):
     if message.author.bot:
         return
     
-    await GPERDU.verif(message)
+    for t in TIMERS:
+        await t.verif(message)
 
     #cette ligne est infernale mais j'ai pas trouvé mieux. Permet de considérer aussi les mots 
     if any(rep in re.sub('[!,.?]', '', i) for i in message.content.lower().split() for rep in SALUTATIONS):
