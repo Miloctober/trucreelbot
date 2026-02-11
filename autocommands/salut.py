@@ -41,9 +41,9 @@ def sentence(slt):
     if nb1 == 0:
         nb2 = random.randint(0, len(connu)-1)
         return f"{slt}, c'est {connu[nb2]} {places[nb3]}!"
-    elif nb1 == 1:
-        nb2 = random.randint(0, len(people)-1) 
-        return f"{slt}, c'est <@{people[nb2]}> {places[nb3]}!"
+    #elif nb1 == 1:
+        #nb2 = random.randint(0, len(people)-1) 
+        #return f"{slt}, c'est <@{people[nb2]}> {places[nb3]}!"
     else:
         nb2 = random.randint(0, len(inconnu)-1) 
         return f"{slt}, c'est {inconnu[nb2]} {places[nb3]}!"
