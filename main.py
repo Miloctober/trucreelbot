@@ -23,7 +23,8 @@ COMMANDS = {
     "sleep" : "commands.shutdown",
     "stat" : "commands.stat",
     "edit" : "commands.edit",
-    "reload" : "commands.reload"
+    "reload" : "commands.reload",
+    "bissap" : "commands.bissap"
 }
 
 SALUTATIONS = ["salut", "bonjour", "coucou", "bonsoir", "enchanté", "hi", "hey", "hewo", "bonjoir", "bonjoouj"]
