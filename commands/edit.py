@@ -49,7 +49,7 @@ async def run(bot, message, args):
                 await message.channel.send("Euuhh- tu as mis un index trop grand ://")
                 return
             lines.pop(int(args[3]) - 1)
-            with open(f"./data/csv/{args[1]}.csv", mode = "w", encoding="utf-8") as file:
+            with open(f"./data/csv/{args[2]}.csv", mode = "w", encoding="utf-8") as file:
                 file.write("\n".join(lines))
                 file.close()
                 await message.channel.send("Supprimé avec succès mouhehe >:3")
