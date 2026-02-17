@@ -33,7 +33,8 @@ SALUTATIONS = ["salut", "bonjour", "coucou", "bonsoir", "enchanté", "hi", "hey"
 REPONSES = ["salut", "bonjour", "coucou", "bonsoir", "re", "hey", "enchanté", "bonjoir", "bonjoouj"]
 
 MOTSREACTIONS = {"npac": "npac",
-                 "prout": "prout"}
+                 "prout": "prout",
+                 "femboy": "femboy"}
 
 from config import TIMERS
 

@@ -61,8 +61,16 @@ async def run(bot, message, args):
         else:
             await message.channel.send(f"Euh... j'ai aucune commande pour {args[1]} désolé ^^'")
     
-    if args[0] == "timer": #!edit timer add prout     !edit timer delete 3      !edit timer display
+    elif args[0] == "timer": #!edit timer add prout     !edit timer delete 3      !edit timer display
+        if len(args) < 2:
+            await message.channel.send("Euuuh, il manque un truc la je crois 0.0")
+            return
         if args[1] == "add":
+            if not args[2].isdigit():
+                await message.channel.send(f"Mmmh... c'est pas un seuil ca... c'est juste {args[2]}")
+                return
+            if int(args[2]) <= 0:
+                await message.channel.send(f"Met un seuil positif !! >:3")
             temp = timer.Timer(int(args[2]), " ".join(args[3:]))
             TIMERS.append(temp)
         if args[1] == "display":
@@ -73,4 +81,12 @@ async def run(bot, message, args):
                 i+=1
             await message.channel.send(temp)
         if args[1] == "delete":
-            TIMERS.pop(int(args[2]) - 1)
+            if not args[2].isdigit():
+                await message.channel.send(f"Mmmh... c'est pas un index ca... c'est juste {args[2]}")
+                return
+            if int(args[2]) <= 0 and int(args[2]) <= len(TIMERS):
+                await message.channel.send(f"Il faut mettre un  VRAI index :333")
+                return
+            TIMERS.pop(int(args[2]) - 1) 
+    else:
+        await message.channel.send("J'ai pas de commande pour edit ;-;")
