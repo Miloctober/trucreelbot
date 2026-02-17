@@ -15,7 +15,7 @@ class Timer:
 
     async def verif(self, message):
         if self.compte == self.seuil:
-            await message.channel.send(embed=make_embed(title=self.reponse))
+            await message.channel.send(self.reponse)
             self.reset()
         else:
             self.compte+=1

@@ -6,6 +6,8 @@ import discord.opus
 import re
 discord.opus._load_default()
 from discord.ext import commands
+from utils.embeds import make_embed
+import config
 
 import autocommands.salut as salut
 import autocommands.reacts as reacts
@@ -62,7 +64,7 @@ async def on_ready():
 
     for guild in bot.guilds:
         if guild.text_channels:
-            channel = guild.text_channels[7]
+            channel = guild.text_channels[0]
             await channel.send("Salut :3")
             break
 
